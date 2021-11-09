@@ -10,7 +10,7 @@ namespace Logger
     {
         public bool Enable;
         
-        public Logger(string str, bool enable = false) 
+        public Logger(string str, bool enable = false)
         {
             Enable = enable;
             nameClass = str;
@@ -28,4 +28,6 @@ namespace Logger
 
         string nameClass;
     }
+
+    
 }

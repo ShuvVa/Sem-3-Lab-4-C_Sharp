@@ -4,7 +4,7 @@ using FracNum;
 using IError;
 using Game;
 
-namespace Sem_3_Lab_4_C_Sharp
+namespace Program
 {
     class Program
     {
