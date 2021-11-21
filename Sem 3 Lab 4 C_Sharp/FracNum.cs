@@ -58,10 +58,38 @@ namespace Program
         public void GetFracNum()    //Аналог оператора ввода из C++
         {
             Logger a = new Logger ("GetFracNum"/*, Enable*/);
+            string num1, num2;
             //double _numerator, _denominator;
-            Console.Write("Numerator:\n: ");
+            try
+            {
+                Console.Write("Numerator:\n: ");
+                num1 = Console.ReadLine();
+                Console.Write("Denominator:\n: ");
+                num2 = Console.ReadLine();
+
+                for (int i = 0; i < num1.Length; i++)
+                {
+                    if ((num1[i] < Convert.ToChar(48) || num1[i] > Convert.ToChar(57)) && (num1[i] != Convert.ToChar(43)) && (num1[i] != Convert.ToChar(45)))
+                    {
+                        throw new InputIError("input error", "wrong char");
+                    }
+                }
+
+                for (int i = 0; i < num2.Length; i++)
+                {
+                    if ((num2[i] < Convert.ToChar(48) || num2[i] > Convert.ToChar(57)) && (num2[i] != Convert.ToChar(43)) && (num2[i] != Convert.ToChar(45)))
+                    {
+                        throw new InputIError("input error", "wrong char");
+                    }
+                }
+
+            }
+            catch (InputIError exception)
+            {
+                Console.Write($"ERROR: ({ Convert.ToString(exception.what())})");
+                Environment.Exit(0);
+            }
             this.Numerator = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Denominator:\n: ");
             this.Denominator = Convert.ToDouble(Console.ReadLine());
             //return new FracNum(_numerator, _denominator);
             a.Dispose();

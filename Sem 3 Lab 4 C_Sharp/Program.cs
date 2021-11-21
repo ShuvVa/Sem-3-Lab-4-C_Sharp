@@ -47,7 +47,25 @@ namespace Program
             //Logger.Enable = true;
             //FracNumTest();
             Console.Write("Выберите, включить ли логгер для программы или нет:\n1. Да.\n2. Нет.\n: ");
-            int choice = Convert.ToInt32(Console.ReadLine());
+            string _choice = "";
+            try
+            {
+                _choice = Console.ReadLine();
+
+                for (int i = 0; i < _choice.Length; i++)
+                {
+                    if ((_choice[i] < Convert.ToChar(48) || _choice[i] > Convert.ToChar(57)) && (_choice[i] != Convert.ToChar(43)) && (_choice[i] != Convert.ToChar(45)))
+                    {
+                        throw new InputIError("input error", "wrong char");
+                    }
+                }
+            }
+            catch (InputIError exception)
+            {
+                Console.Write($"ERROR: ({ Convert.ToString(exception.what())})");
+                Environment.Exit(0);
+            }
+            int choice = Convert.ToInt32(_choice);
             switch (choice) {
                 case 1:
                     {
