@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+﻿using System.IO;
 
-namespace IError
+namespace Program
 {
-    abstract class IError
+    abstract class IError : System.Exception
     {
         protected string m_IError;
-        
+
         public IError(string error)
         {
             m_IError = error;
@@ -21,7 +16,8 @@ namespace IError
             return m_IError;
         }
 
-        ~IError(){
+        ~IError()
+        {
             string path = @"C:\ErrorLog\Error.txt";
             string txt = ($"{m_IError}\n");
             using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
@@ -33,14 +29,14 @@ namespace IError
                 sw.WriteLine(txt);
             }
 
-            
+
         }
     }
 
     class MathIError : IError
     {
         private string m_mathIError;
-        public MathIError(string error, int a, int b, char op) : base (error)
+        public MathIError(string error, int a, int b, char op) : base(error)
         {
             m_mathIError = a + " " + op + " " + b;
         }
