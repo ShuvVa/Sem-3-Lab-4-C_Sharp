@@ -32,10 +32,24 @@ namespace Program
         {
             //Logger logger = new Logger("Main",true);
             //new Enable_Logger(true);
-            Logger.Enable = true;
+            //Logger.Enable = true;
+            //FracNumTest();
+            Console.Write("Выберите, включить ли логгер для программы или нет:\n1. Да.\n2. Нет.\n: ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice) {
+                case 1:
+                    {
+                        Logger.Enable = true;
+                        break;
+                    }
+                case 2:
+                    {
+                        Logger.Enable = false;
+                        break;
+                    }
+            }
+            Console.Write("Запуск функции для работы с дробями");
             FracNumTest();
-            //Console.Write("Выберите, включить ли логгер для программы или нет:\n1. Да.\n2. Нет.\n: ");
-            
             //string _choice;
             //try
             //{
@@ -104,8 +118,8 @@ namespace Program
             //            Console.Writeline("Wrong input");
             //        }
             //}
-            
-            
+
+
         }
     }
 }
