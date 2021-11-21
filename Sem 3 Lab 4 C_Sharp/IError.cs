@@ -2,7 +2,7 @@
 
 namespace Program
 {
-    abstract class IError : System.Exception
+    public abstract class IError : System.Exception
     {
         protected string m_IError;
 
@@ -33,10 +33,10 @@ namespace Program
         }
     }
 
-    class MathIError : IError
+ public class MathIError : IError
     {
         private string m_mathIError;
-        public MathIError(string error, int a, int b, char op) : base(error)
+        public MathIError(string error, double a, double b, char op) : base(error)
         {
             m_mathIError = a + " " + op + " " + b;
         }
@@ -48,7 +48,7 @@ namespace Program
         }
     }
 
-    class InputIError : IError
+    public class InputIError : IError
     {
         private string m_inputIError;
         public InputIError(string error, string inputtext) : base(error)

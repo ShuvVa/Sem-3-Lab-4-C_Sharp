@@ -21,21 +21,19 @@ namespace Program
         }
         public FracNum(double num, double denum, string str = "FracNum2"/*, bool Enable = false*/) : base(str/*, Enable*/)
         {
+            try
+            {
+                if (denum == 0) throw new MathIError("division by zero", num, denum, '/');
+            }
+            catch (MathIError exception)
+            {
+                //cerr << "ERROR: (" << exception.what() << ")\n";
+                Console.Write($"ERROR: ({ Convert.ToString(exception.what())})");
+                //Console.WriteLine("Error: division by zero!");
+                Environment.Exit(0);
+            }
 
-            //try
-            //{
-            //    if (denum == 0)
-            //        throw MathIError("division by zero", num, denum, '/');
-            //}
-            //catch (MathIError)
-            //{
-            //    //cerr << "ERROR: (" << exception.what() << ")\n";
-            //    num = 0;
-            //    denum = 1;
-            //    //abort();
-            //}
-
-            if (denum == 0) { denum = num; num = 0;  }
+            //if (denum == 0) { denum = num; num = 0;  }
 
             Numerator = num;
 
@@ -57,7 +55,7 @@ namespace Program
             Denominator = 0;
             Nod = 0;
         }
-        public void GetFracNum()
+        public void GetFracNum()    //Аналог оператора ввода из C++
         {
             Logger a = new Logger ("GetFracNum"/*, Enable*/);
             //double _numerator, _denominator;
@@ -68,7 +66,14 @@ namespace Program
             //return new FracNum(_numerator, _denominator);
             a.Dispose();
         }
-        public string ReturnFracNum()
+
+        public FracNum GetFracNum(in FracNum fn)    //Аналог оператора присваивания из C++
+        {
+            this.Numerator = fn.Numerator;
+            this.Denominator = fn.Denominator;
+            return this;
+        }
+        public string ReturnFracNum()   //Аналог оператора вывода из C++
         {
             Logger a = new Logger ("ReturnFracNum"/*, Enable*/);
             string fracnum = ($"{this.Numerator}/{this.Denominator}");
@@ -77,7 +82,7 @@ namespace Program
         }
         public static FracNum operator +(in FracNum fn1, in FracNum fn2) 
         {
-            Logger a = new Logger("Addition"/*, Enable*/);
+            Logger a = new Logger("Addition FracNum"/*, Enable*/);
             if (fn1.Denominator == fn2.Denominator)
             {
                 FracNum fn3 = new FracNum(fn1.Numerator+fn2.Numerator, fn1.Denominator);
@@ -94,7 +99,7 @@ namespace Program
         }
         public static FracNum operator -(in FracNum fn1, in FracNum fn2) 
         {
-            Logger a = new Logger("Substraction"/*, Enable*/);
+            Logger a = new Logger("Substraction FracNum"/*, Enable*/);
             if (fn1.Denominator == fn2.Denominator)
             {
                 FracNum fn3 = new FracNum(fn1.Numerator-fn2.Numerator, fn1.Denominator);
@@ -111,14 +116,14 @@ namespace Program
         }
         public static FracNum operator *(in FracNum fn1, in FracNum fn2) 
         {
-            Logger a = new Logger("Multiplication"/*, Enable*/);
+            Logger a = new Logger("Multiplication FracNum"/*, Enable*/);
             FracNum fn3 = new FracNum(fn1.Numerator*fn2.Numerator,fn1.Denominator*fn2.Denominator);
             a.Dispose();
             return fn3;
         }
         public static FracNum operator /(in FracNum fn1, in FracNum fn2) 
         {
-            Logger a = new Logger("Division"/*, Enable*/);
+            Logger a = new Logger("Division Fracum"/*, Enable*/);
             FracNum fn3 = new FracNum(fn1.Numerator*fn2.Denominator,fn1.Denominator*fn2.Numerator);
             a.Dispose();
             return fn3;
@@ -150,6 +155,38 @@ namespace Program
                 a.Dispose();
                 return fn3;
             }
+        }
+
+        public static FracNum operator +(in FracNum fn, in int inc)
+        {
+            Logger a = new Logger("Addition int"/*, Enable*/);
+            FracNum fn2 = new FracNum(fn.Numerator+inc*fn.Denominator,fn.Denominator);
+            a.Dispose();
+            return fn2;
+        }
+
+        public static FracNum operator -(in FracNum fn, in int dec)
+        {
+            Logger a = new Logger("Substracion int"/*, Enable*/);
+            FracNum fn2 = new FracNum(fn.Numerator-dec*fn.Denominator,fn.Denominator);
+            a.Dispose();
+            return fn2;
+        }
+
+        public static FracNum operator *(in FracNum fn, in int mul)
+        {
+            Logger a = new Logger("Multiplication int"/*, Enable*/);
+            FracNum fn2  = new FracNum(fn.Numerator*mul,fn.Denominator);
+            a.Dispose();
+            return fn2;
+        }
+
+        public static FracNum operator /(in FracNum fn, in int div)
+        {
+            Logger a = new Logger("Multiplication int"/*, Enable*/);
+            FracNum fn2  = new FracNum(fn.Numerator,fn.Denominator*div);
+            a.Dispose();
+            return fn2;
         }
 
         //public static FracNum operator =() { return new FracNum(); }

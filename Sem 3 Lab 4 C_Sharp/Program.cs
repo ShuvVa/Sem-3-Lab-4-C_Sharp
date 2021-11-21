@@ -9,7 +9,7 @@ namespace Program
             FracNum a = new FracNum() ,b = new FracNum();
             a.GetFracNum();
             b.GetFracNum();
-            int x = -5;
+            int x = 5;
             Console.WriteLine($"a = {a.ReturnFracNum()}");
             Console.WriteLine($"b = {b.ReturnFracNum()}");
             Console.WriteLine($"x = {x}");
@@ -17,6 +17,18 @@ namespace Program
             Console.WriteLine($"(a-b) = {(a - b).ReturnFracNum()}");
             Console.WriteLine($"(a*b) = {(a * b).ReturnFracNum()}");
             Console.WriteLine($"(a/b) = {(a / b).ReturnFracNum()}");
+
+            Console.WriteLine($"(a+x) = {(a + x).ReturnFracNum()}");
+            Console.WriteLine($"(a-x) = {(a - x).ReturnFracNum()}");
+            Console.WriteLine($"(a*x) = {(a * x).ReturnFracNum()}");
+            Console.WriteLine($"(a/x) = {(a / x).ReturnFracNum()}");
+
+            Console.WriteLine($"(b+x) = {(b + x).ReturnFracNum()}");
+            Console.WriteLine($"(b-x) = {(b - x).ReturnFracNum()}");
+            Console.WriteLine($"(b*x) = {(b * x).ReturnFracNum()}");
+            Console.WriteLine($"(b/x) = {(b / x).ReturnFracNum()}");
+            FracNum c = new FracNum();
+            Console.WriteLine($"(c=a) = {(c=a).ReturnFracNum()}");
             Console.WriteLine($"(a^x) = {(a ^ x).ReturnFracNum()}");
             Console.WriteLine($"(b^x) = {(b ^ x).ReturnFracNum()}");
             Console.WriteLine($"(a^-1) = {(a ^ -1).ReturnFracNum()}");
@@ -48,7 +60,7 @@ namespace Program
                         break;
                     }
             }
-            Console.Write("Запуск функции для работы с дробями");
+            Console.WriteLine("Запуск функции для работы с дробями");
             FracNumTest();
             //string _choice;
             //try
