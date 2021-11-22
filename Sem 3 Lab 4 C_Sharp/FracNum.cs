@@ -26,7 +26,7 @@ namespace Program
             catch (MathIError exception)
             {
                 Console.Write($"ERROR: ({ Convert.ToString(exception.what())})!");
-                Environment.Exit(0);
+                Environment.Exit(1);
             }
 
             Numerator = num;
@@ -80,7 +80,7 @@ namespace Program
             catch (InputIError exception)
             {
                 Console.Write($"ERROR: ({ Convert.ToString(exception.what())})");
-                Environment.Exit(0);
+                Environment.Exit(2);
             }
             this.Numerator = Convert.ToDouble(num1);
             this.Denominator = Convert.ToDouble(num2);
