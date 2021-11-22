@@ -84,6 +84,7 @@ namespace Program
             }
             this.Numerator = Convert.ToDouble(num1);
             this.Denominator = Convert.ToDouble(num2);
+            Console.WriteLine();
             a.Dispose();
         }
 

@@ -10,17 +10,17 @@ namespace Program
         public Logger(string str)
         {
             this.nameClass = str;
-            if (Enable) Console.WriteLine($"\nConstruct {this.nameClass}\n");
+            if (Enable) Console.Write($"\nConstruct {this.nameClass}\n");
         }
 
         public void OutFuctName(string name)
         {
-            if (Enable) Console.WriteLine($"Function {name} begin to work.");
+            if (Enable) Console.Write($"Function {name} begin to work.");
         }
 
         public void Dispose()
         {
-            if (Enable) Console.WriteLine($"\nDestruct {nameClass}\n");
+            if (Enable) Console.Write($"\nDestruct {nameClass}\n");
         }
 
         string nameClass;
