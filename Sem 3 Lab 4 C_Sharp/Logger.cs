@@ -22,9 +22,6 @@ namespace Program
         {
             if (Enable) Console.WriteLine($"\nDestruct {nameClass}\n");
         }
-        //~Logger(){
-        //    if (Enable) Console.WriteLine($"\nDestruct {nameClass}\n");
-        //}
 
         string nameClass;
     }
