@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Sem_3_Lab_6_C_Sharp</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="FracNum">
+      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\FracNum.dll</HintPath>
+    </Reference>
+    <Reference Include="IError">
+      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\IError.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\Logger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
