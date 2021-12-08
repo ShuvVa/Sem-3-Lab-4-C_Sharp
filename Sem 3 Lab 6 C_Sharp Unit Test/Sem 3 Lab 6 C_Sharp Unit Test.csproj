@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Sem_3_Lab_6_C_Sharp_Unit_Test</RootNamespace>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
+    <PackageReference Include="coverlet.collector" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FracNum">
+      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\FracNum.dll</HintPath>
+    </Reference>
+    <Reference Include="IError">
+      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\IError.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\Logger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
