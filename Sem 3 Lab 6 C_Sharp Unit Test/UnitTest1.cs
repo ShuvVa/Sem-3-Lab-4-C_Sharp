@@ -3,25 +3,6 @@ using FracNumLib;
 
 namespace Sem_3_Lab_6_C_Sharp_Unit_Test
 {
-    //public class FracNumCompare : FracNum
-    //{
-    //    FracNumCompare()
-    //    {
-
-    //    }
-
-    //    public bool Equals(ref FracNum obj1, ref FracNum obj2)
-    //    {
-    //        if (((obj1 == null) || !this.GetType().Equals(obj1.GetType()))||(((obj2 == null) || !this.GetType().Equals(obj2.GetType()))))
-    //        {
-    //            return false;
-    //        }
-    //        else
-    //        {
-    //            return (obj1.GetNumerator() == obj2.GetNumerator())&&(obj2.GetDenominator()==obj2.GetDenominator());
-    //        }
-    //    }
-    //}
 
     [TestClass]
     public class Arithmetic
