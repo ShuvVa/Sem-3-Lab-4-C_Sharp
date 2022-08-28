@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Program 
+namespace LoggerLib
 {
-    class Logger : IDisposable
+    public class Logger : IDisposable
     {
-        
+
         static public bool Enable;
-        
+
         public Logger(string str)
         {
             this.nameClass = str;
@@ -25,6 +25,4 @@ namespace Program
 
         string nameClass;
     }
-
-    
 }

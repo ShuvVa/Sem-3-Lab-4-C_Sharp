@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace Program
+﻿namespace IErrorLib
 {
     public abstract class IError : System.Exception
     {
@@ -33,7 +31,7 @@ namespace Program
         }
     }
 
- public class MathIError : IError
+    public class MathIError : IError
     {
         private string m_mathIError;
         public MathIError(string error, double a, double b, char op) : base(error)
