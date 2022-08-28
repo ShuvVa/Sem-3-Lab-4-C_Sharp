@@ -17,14 +17,16 @@
 
   <ItemGroup>
     <Reference Include="FracNum">
-      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\FracNum.dll</HintPath>
+      <HintPath>..\FracNum\bin\Debug\net6.0\FracNum.dll</HintPath>
     </Reference>
     <Reference Include="IError">
-      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\IError.dll</HintPath>
+      <HintPath>..\IError\bin\Debug\net6.0\IError.dll</HintPath>
     </Reference>
     <Reference Include="Logger">
-      <HintPath>..\..\Sem 3 Lab 6 C_Sharp Libs\FracNum\bin\Debug\net6.0\Logger.dll</HintPath>
+      <HintPath>..\Logger\bin\Debug\net6.0\Logger.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  
 
 </Project>
